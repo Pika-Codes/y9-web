@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        <input type="text" class="mytext">
+        <button onclick="checkText()">Click Me</button>
+
+        <select class="myselect" onchange="checkSelect()">
+            <option>Cat</option>
+            <option>Dog</option>
+            <option>Neither</option>
+        </select>
+
+        <h1 class="pts"></h1>
+
+        <input type="checkbox" class="checky" onclick="checkIt()">
+        
+    </body>
+
+    <script>
+
+        function checkIt() {
+            var checkval = 
+            document.getElementsByClassName("checky").value;
+            if (checkval) {
+                alert("You have chosen wisely young grasshopper")
+            }
+            else {
+                alert("You Suck")
+            }
+        }
+
+        function checkSelect() {
+            var myselect =
+            document.getElementsByClassName("myselect").value;
+            var mum = 0;
+            if (myselect == "Cat") {
+                num = 20;
+            }
+            else if (myselect == "Neither") {
+                num = 10;
+            }
+            else {
+                num = 5;
+            }
+
+            var mypts = document.getElementsByClassName("pts");
+                mypts.innerHTML = myselect + " is " + num + "points";
+        }
+        
+        function checkText() {
+            var mytext = 
+                document.getElementsByClassName("mytext").value;
+                if (mytext == "" || mytext == null) {
+                    alert("Please Enter Text");
+                }
+                else if (mytext == "poopypants" || mytext == "PoopyPants") {
+                    alert("Hello Mr. Hoel");
+                }
+                else{
+                    alert("Hello" + mytext)
+                }
+        }    
+
+    </script>
+
+</html>
